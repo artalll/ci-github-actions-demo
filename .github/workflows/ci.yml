@@ -1,4 +1,4 @@
-name: Basic CI
+name: Python Tests
 
 on:
   push:
@@ -6,13 +6,20 @@ on:
       - main
 
 jobs:
-  say-hello:
+  test-python:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Say Hello
-        run: echo "Hello, CI with GitHub Actions!"
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
 
+      - name: Install dependencies
+        run: pip install -r requirements.txt || echo "No requirements file"
+
+      - name: Run unit tests
+        run: python -m unittest test_main.py
