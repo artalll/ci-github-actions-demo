@@ -6,11 +6,11 @@ It includes:
 - A CI workflow that runs on every push to `main`
 
 ## Project Structure
-├── main.py # Python file with simple logic
-├── test_main.py # Unit test for the function
-└── .github/
-└── workflows/
-└── ci.yml # GitHub Actions workflow
+main.py # Python file with simple logic
+test_main.py # Unit test for the function
+.github/
+workflows/
+ci.yml # GitHub Actions workflow
 
 ## Running Tests Locally
 Make sure you have Python 3.9+ installed:
