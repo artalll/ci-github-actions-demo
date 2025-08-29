@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.7.17, 3.8.18, 3.9.23, 3.10.18]
+        python-version: [3.8.18, 3.9.23, 3.10.18]
 
     steps:
       - name: Checkout code
