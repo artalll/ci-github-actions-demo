@@ -6,10 +6,11 @@ on:
 
 jobs:
   test-python:
-    runs-on: ubuntu-latest
+    #runs-on: ubuntu-latest
     strategy:
       matrix:
-        python-version: [3.8.18, 3.9.23, 3.10.18]
+        python-version: [3.7.17, 3.8.18, 3.9.23, 3.10.18]
+    runs-on: ${{ matrix.python-version == '3.7.17' && 'ubuntu-22.04' || 'ubuntu-latest' }}
 
     steps:
       - name: Checkout code
